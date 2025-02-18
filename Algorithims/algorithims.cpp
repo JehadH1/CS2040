@@ -11,10 +11,10 @@
 
 void selectionSort(vector<int> &vec){
     int n = vec.size();
-
-    for (int i = 0; i < n - 2; i++){
+    for (int i = 0; i < n - 1; i++){
         int min = i;
-        for (int j = i + 1; j < n - 1; j++){
+        for (int j = i + 1; j < n; j++){
+            //find smallest element and keep that index
             if(vec[j] < vec[min]){
                 min = j;
             }
@@ -36,7 +36,6 @@ void selectionSort(vector<int> &vec){
 
 void bubbleSort(vector<int> &vec){
     int n = vec.size();
-
     for (int i = 0; i < n - 1; i++){
         for(int j = 0; j < n - 1 - i; j++){
             if(vec[j+1] < vec[j]){
@@ -59,8 +58,7 @@ void bubbleSort(vector<int> &vec){
 
 void insertionSort(vector<int> &vec){
     int n = vec.size();
-
-    for(int i = 1; i < n - 1; i++){
+    for(int i = 1; i < n; i++){
         int v = vec[i];
         int j = i - 1;
 
@@ -127,8 +125,8 @@ void merge(vector<int> &left, vector<int> &right, vector<int> &vec){
     }
     // Copy the remaining elements of Right 
     while(j < q){
-        vec[k] = left[q];
-        q++;
+        vec[k] = right[q];
+        j++;
         k++;
     }
 }
