@@ -103,6 +103,7 @@ void mergeSort(vector<int> &vec){
 // Input: Arrays B[0..p − 1] and C[0..q − 1] both sorted
 // Output: Sorted array A[0..p + q − 1] of the elements of B and C
 // Needed for Merge Sort
+
 void merge(vector<int> &left, vector<int> &right, vector<int> &vec){
     int i = 0, j = 0, k = 0;
     int p = left.size();
