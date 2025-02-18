@@ -37,8 +37,8 @@ void selectionSort(vector<int> &vec){
 void bubbleSort(vector<int> &vec){
     int n = vec.size();
 
-    for (int i = 0; i < n - 2; i++){
-        for(int j = 0; j < n - 2 -i; j++){
+    for (int i = 0; i < n - 1; i++){
+        for(int j = 0; j < n - 1 - i; j++){
             if(vec[j+1] < vec[j]){
                 //swap
                 int tmp = vec[j];
@@ -60,7 +60,7 @@ void bubbleSort(vector<int> &vec){
 void insertionSort(vector<int> &vec){
     int n = vec.size();
 
-    for(int i = 0; i < n - 1; i++){
+    for(int i = 1; i < n - 1; i++){
         int v = vec[i];
         int j = i - 1;
 
