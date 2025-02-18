@@ -132,3 +132,7 @@ void merge(vector<int> &left, vector<int> &right, vector<int> &vec){
         k++;
     }
 }
+
+void quickSort(vector<int> &vec, int left, int right){
+    
+}
