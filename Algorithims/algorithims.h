@@ -17,5 +17,5 @@ void mergeSort(vector<int> &vec);
 void merge(vector<int> &left, vector<int> &right, vector<int> &vec);
 
 //quick sort
-void quickSort(vector<int> &vec, int start, int end);
-int partion(vector<int> &vec, int start, int end);
+void quickSort(vector<int> &vec, int left, int right);
+int partion(vector<int> &vec, int left, int right);

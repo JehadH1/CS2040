@@ -7,15 +7,19 @@
 // Output: Array A[0..n − 1] sorted in nondecreasing order
 // time complexity: O(n^2)
 // space complexity: O(1)
-// stability: Selection Sort is stable
+// stability: Selection Sort is not stable
 
-void selectionSort(vector<int> &vec){
+void selectionSort(vector<int> &vec)
+{
     int n = vec.size();
-    for (int i = 0; i < n - 1; i++){
+    for (int i = 0; i < n - 1; i++)
+    {
         int min = i;
-        for (int j = i + 1; j < n; j++){
+        for (int j = i + 1; j < n; j++)
+        {
             // find smallest element and keep that index
-            if (vec[j] < vec[min]){
+            if (vec[j] < vec[min])
+            {
                 min = j;
             }
         }
@@ -37,9 +41,12 @@ void selectionSort(vector<int> &vec){
 void bubbleSort(vector<int> &vec)
 {
     int n = vec.size();
-    for (int i = 0; i < n - 1; i++){
-        for (int j = 0; j < n - 1 - i; j++){
-            if (vec[j + 1] < vec[j]){
+    for (int i = 0; i < n - 1; i++)
+    {
+        for (int j = 0; j < n - 1 - i; j++)
+        {
+            if (vec[j + 1] < vec[j])
+            {
                 // swap
                 int tmp = vec[j];
                 vec[j] = vec[j + 1];
@@ -57,13 +64,16 @@ void bubbleSort(vector<int> &vec)
 // space complexity: O(1)
 // stability: Insertion Sort is stable
 
-void insertionSort(vector<int> &vec){
+void insertionSort(vector<int> &vec)
+{
     int n = vec.size();
-    for (int i = 1; i < n; i++){
+    for (int i = 1; i < n; i++)
+    {
         int v = vec[i];
         int j = i - 1;
 
-        while ((j >= 0) && (vec[j] > v)){
+        while ((j >= 0) && (vec[j] > v))
+        {
             vec[j + 1] = vec[j];
             j = j - 1;
         }
@@ -79,13 +89,16 @@ void insertionSort(vector<int> &vec){
 // space complexity: O(n)
 // stability: Merge Sort is stable
 
-void mergeSort(vector<int> &vec){
+void mergeSort(vector<int> &vec)
+{
     int n = vec.size();
-    if (n > 1){
+    if (n > 1)
+    {
         vector<int> left;
         vector<int> right;
         // copy
-        for (int i = 0; i < n; i++){
+        for (int i = 0; i < n; i++)
+        {
             if (i < (n / 2))
                 left.push_back(vec[i]);
             else
@@ -103,61 +116,92 @@ void mergeSort(vector<int> &vec){
 // Output: Sorted array A[0..p + q − 1] of the elements of B and C
 // Needed for Merge Sort
 
-void merge(vector<int> &left, vector<int> &right, vector<int> &vec){
+void merge(vector<int> &left, vector<int> &right, vector<int> &vec)
+{
     int i = 0, j = 0, k = 0;
     int p = left.size();
     int q = right.size();
 
-    while ((i < p) && (j < q)){
-        if (left[i] <= right[j]){
+    while ((i < p) && (j < q))
+    {
+        if (left[i] <= right[j])
+        {
             vec[k] = left[i];
             i++;
         }
-        else{
+        else
+        {
             vec[k] = right[j];
             j++;
         }
         k++;
     }
     // Copy the remaining elements of Left
-    while (i < p){
+    while (i < p)
+    {
         vec[k] = left[i];
         i++;
         k++;
     }
     // Copy the remaining elements of Right
-    while (j < q){
+    while (j < q)
+    {
         vec[k] = right[j];
         j++;
         k++;
     }
 }
 
-void quickSort(vector<int> &vec, int start, int end){
-    if (end <= start)
-        return; // base case
+// Algorithim: Quick Sort
+// Sorts a subarray by quicksort
+// Input: Subarray of array A[0..n − 1], defined by its left and right
+// indices l and r
+// Output: Subarray A[l..r] sorted in nondecreasing order
+// time complexity: O(nlogn)
+// space complexity: O(logn)
+// stability: Merge Sort is not stable
 
-    int pivot = partion(vec, start, end);
-
-    quickSort(vec, start, pivot - 1);
-    quickSort(vec, pivot + 1, end);
+void quickSort(vector<int> &vec, int left, int right)
+{
+    if (left < right)
+    {
+        int s = partion(vec, left, right);
+        quickSort(vec, left, s - 1);
+        quickSort(vec, s + 1, right);
+    }
 }
 
-int partion(vector<int> &vec, int start, int end){
-    int pivot = vec[end];
-    int i = start - 1;
+//  Partitions a subarray by Hoare’s algorithm, using the first element
+//  as a pivot
+//  Input: Subarray of array A[0..n − 1], defined by its left and right
+//  indices l and r (l < r)
+//  Output: Partition of A[l..r], with the split position returned as
+//  this function’s value
+int partion(vector<int> &vec, int left, int right)
+{
+    int pivot = vec[left];
 
-    for (int j = start; j <= end - 1; j++){
-        if (vec[j] < pivot){
+    int i = left;
+    int j = right;
+
+    while (true){
+        while(vec[i] <= pivot && i < right){
             i++;
+        }
+        while(vec[j]>= pivot && j > left){
+            j--;
+        }
+        if(i < j){
+            // Swap elements at indices `i` and `j`
             int tmp = vec[i];
             vec[i] = vec[j];
             vec[j] = tmp;
+        } else {
+            // Swap pivot with element at index `j`
+            int tmp = vec[left];
+            vec[left] = vec[j];
+            vec[j] = tmp;
+            return j;
         }
     }
-    i++;
-    int tmp = vec[i];
-    vec[i] = vec[end];
-    vec[end] = tmp;
-    return i;
 }
