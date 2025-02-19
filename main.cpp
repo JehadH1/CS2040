@@ -2,50 +2,23 @@
 #include <vector>
 #include <cstdlib>
 #include "Algorithims/algorithims.h"
+#include "VecBuilder/vecBuilder.h"
 
 using namespace std;
 
-int main(){
-    srand(time(0));
+int main()
+{
 
-    vector<int> a;
-    for(int i = 0; i <10; i++){
-        a.push_back(rand() % 101);
+    vector<vector<int>> randVec;
+    for (int i; i < 10; i++){
+        vector<int> tmp = buildRandomVector(10);
+        randVec.push_back(tmp);
     }
 
-    cout << "\n selection sort \n";
-    vector<int> a1 = a;
-    selectionSort(a1);
-    for(int i: a1){
-        cout<< i <<"  ";
+    for (auto i : randVec){
+        for (auto j : i){
+            cout << j << " ";
+        }
+        cout << "\n";
     }
-
-    cout << "\n bubble sort \n";
-    vector<int> a2 = a;
-    bubbleSort(a2);
-    for(int i: a2){
-        cout<< i <<"  ";
-    }
-
-    cout << "\n insersion sort \n";
-    vector<int> a3 = a;
-    insertionSort(a3);
-    for(int i: a3){
-        cout<< i <<"  ";
-    }
-
-    cout << "\n merge sort \n";
-    vector<int> a4 = a;
-    bubbleSort(a4);
-    for(int i: a4){
-        cout<< i <<"  ";
-    }
-
-    cout << "\n quick sort \n";
-    vector<int> a5 = a;
-    bubbleSort(a5);
-    for(int i: a5){
-        cout<< i <<"  ";
-    }
-    cout<<"\n";
 }
