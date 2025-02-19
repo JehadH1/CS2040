@@ -6,9 +6,8 @@
 
 using namespace std;
 
-int main()
-{
-
+int main(){
+    srand(time(0));
     vector<vector<int>> randVec;
     for (int i; i < 10; i++){
         vector<int> tmp = buildRandomVector(10);
