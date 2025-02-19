@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 #include <vector>
 #include <cstdlib>
 #include "Algorithims/algorithims.h"
@@ -10,8 +11,9 @@ int main()
 {
     srand(time(0));
 
+    clock_t start, end;
     // build the three sizes (1k, 10k, 100k) vectors;
-    vector<vector<int>> rand1KVec = buildVector(10, 10);
+    vector<vector<int>> rand1KVec = buildVector(10, 1000);
     vector<vector<int>> rand10KVec = buildVector(10, 10000);
     vector<vector<int>> rand100KVec = buildVector(10, 100000);
 
@@ -32,8 +34,40 @@ int main()
 
     // selection Sort
     vector<vector<int>> selectRand1k = rand1KVec;
+    cout << "The Algorithim is Selection Sort \nThe size is 1K \n";
+    cout << "Random   ";
+    for (auto row : selectRand1k)
+    {
+        start = clock();
+        bubbleSort(row);
+        end = clock();
+        double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
+        cout << time_taken << setprecision(5) << "||";
+    }
+    cout << endl;
+
     vector<vector<int>> selectSort1k = sort1kVec;
+    cout << "Sorted   ";
+    for (auto row : selectSort1k)
+    {
+        start = clock();
+        bubbleSort(row);
+        end = clock();
+        double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
+        cout << time_taken << setprecision(5) << "||";
+    }
+    cout << endl;
     vector<vector<int>> selectRevSort1k = revSort1kVec;
+    cout << "Rev Sort ";
+    for (auto row : selectRevSort1k)
+    {
+        start = clock();
+        bubbleSort(row);
+        end = clock();
+        double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
+        cout << time_taken << setprecision(5) << "||";
+    }
+    cout << endl;
 
     vector<vector<int>> selectRand10k = rand10KVec;
     vector<vector<int>> selectSort10k = sort10kVec;
