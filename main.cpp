@@ -195,7 +195,6 @@ int main()
     // cout << endl;
     // cout << endl;
 
-
     // Bubble sort
     vector<vector<int>> bubbleRand1k = rand1KVec;
     vector<vector<int>> bubbleSort1k = sort1kVec;
@@ -351,12 +350,11 @@ int main()
     // cout << endl;
     // cout << endl;
 
-
     // Insertion sort
     vector<vector<int>> insertionRand1k = rand1KVec;
     vector<vector<int>> insertionSort1k = sort1kVec;
     vector<vector<int>> insertionRevSort1k = revSort1kVec;
-    cout << "The Algorithim is InsertionSort \n";
+    cout << "The Algorithim is Insertion Sort \n";
     cout << "The size is 1K \n";
     cout << "Random   ";
     for (auto row : insertionRand1k)
@@ -507,12 +505,11 @@ int main()
     // cout << endl;
     // cout << endl;
 
-
     // Merge sort
     vector<vector<int>> mergeRand1k = rand1KVec;
     vector<vector<int>> mergeSort1k = sort1kVec;
     vector<vector<int>> mergeRevSort1k = revSort1kVec;
-    cout << "The Algorithim is Merge SOrt \n";
+    cout << "The Algorithim is Merge Sort \n";
     cout << "The size is 1K \n";
     cout << "Random   ";
     for (auto row : mergeRand1k)
@@ -663,22 +660,163 @@ int main()
     // cout << endl;
     // cout << endl;
 
-    
     // Quick sort
     vector<vector<int>> quickRand1k = rand1KVec;
     vector<vector<int>> quickSort1k = sort1kVec;
     vector<vector<int>> quickRevSort1k = revSort1kVec;
+    cout << "The Algorithim is Quick Sort \n";
+    cout << "The size is 1K \n";
+    cout << "Random   ";
+    for (auto row : quickRand1k)
+    {
+        start = clock();
+        quickSort(row, 0, row.size());
+        end = clock();
+        double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
+        if (time_taken < best1kRand)
+        {
+            best1kRand = time_taken;
+            Rand1K = "Quick Sort";
+        }
+        cout << "| " << setw(6) << fixed << setprecision(5) << time_taken << " |";
+    }
+    cout << endl;
+    cout << "Sorted   ";
+    for (auto row : quickSort1k)
+    {
+        start = clock();
+        quickSort(row, 0, row.size());
+        end = clock();
+        double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
+        if (time_taken < best1kSort)
+        {
+            best1kSort = time_taken;
+            Sort1K = "Quick Sort";
+        }
+        cout << "| " << setw(6) << fixed << setprecision(5) << time_taken << " |";
+    }
+    cout << endl;
+    cout << "Rev Sort ";
+    for (auto row : quickRevSort1k)
+    {
+        start = clock();
+        quickSort(row, 0, row.size());
+        end = clock();
+        double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
+        if (time_taken < best1kRevSort)
+        {
+            best1kRevSort = time_taken;
+            RevSort1K = "Quick Sort";
+        }
+        cout << "| " << setw(6) << fixed << setprecision(5) << time_taken << " |";
+    }
+    cout << endl;
+    cout << endl;
 
     vector<vector<int>> quickRand10k = rand10KVec;
     vector<vector<int>> quickSort10k = sort10kVec;
     vector<vector<int>> quickRevSort10k = revSort10kVec;
+    cout << "The size is 10K \n";
+    cout << "Random   ";
+    for (auto row : quickRand10k)
+    {
+        start = clock();
+        quickSort(row, 0, row.size());
+        end = clock();
+        double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
+        if (time_taken < best10kRand)
+        {
+            best10kRand = time_taken;
+            Rand10K = "Quick Sort";
+        }
+        cout << "| " << setw(6) << fixed << setprecision(5) << time_taken << " |";
+    }
+    cout << endl;
+    cout << "Sorted   ";
+    for (auto row : quickSort10k)
+    {
+        start = clock();
+        quickSort(row, 0, row.size());
+        end = clock();
+        double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
+        if (time_taken < best10kSort)
+        {
+            best10kSort = time_taken;
+            Sort10K = "Quick Sort";
+        }
+        cout << "| " << setw(6) << fixed << setprecision(5) << time_taken << " |";
+    }
+    cout << endl;
+    cout << "Rev Sort ";
+    for (auto row : quickRevSort10k)
+    {
+        start = clock();
+        quickSort(row, 0, row.size());
+        end = clock();
+        double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
+        if (time_taken < best10kRevSort)
+        {
+            best10kRevSort = time_taken;
+            RevSort10K = "Quick Sort";
+        }
+        cout << "| " << setw(6) << fixed << setprecision(5) << time_taken << " |";
+    }
+    cout << endl;
+    cout << endl;
 
     vector<vector<int>> quickRand100k = rand100KVec;
     vector<vector<int>> quickSort100k = sort100kVec;
     vector<vector<int>> quickRevSort100k = revSort100kVec;
+    // cout << "The size is 100K \n";
+    // cout << "Random   ";
+    // for (auto row : quickRand100k)
+    // {
+    //     start = clock();
+    //     quickSort(row, 0, row.size());
+    //     end = clock();
+    //     double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
+    //     if (time_taken < best100kRand)
+    //     {
+    //         best100kRand = time_taken;
+    //         Rand100K = "Quick Sort";
+    //     }
+    //     cout << "| " << setw(6) << fixed << setprecision(5) << time_taken << " |";
+    // }
+    // cout << endl;
+    // cout << "Sorted   ";
+    // for (auto row : quickSort100k)
+    // {
+    //     start = clock();
+    //     quickSort(row, 0, row.size());
+    //     end = clock();
+    //     double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
+    //     if (time_taken < best100kSort)
+    //     {
+    //         best100kSort = time_taken;
+    //         Sort100K = "Quick Sort";
+    //     }
+    //     cout << "| " << setw(6) << fixed << setprecision(5) << time_taken << " |";
+    // }
+    // cout << endl;
+    // cout << "Rev Sort ";
+    // for (auto row : quickRevSort100k)
+    // {
+    //     start = clock();
+    //     quickSort(row, 0, row.size());
+    //     end = clock();
+    //     double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
+    //     if (time_taken < best100kRevSort)
+    //     {
+    //         best100kRevSort = time_taken;
+    //         RevSort100K = "Quick Sort";
+    //     }
+    //     cout << "| " << setw(6) << fixed << setprecision(5) << time_taken << " |";
+    // }
+    // cout << endl;
+    // cout << endl;
 
     cout << "Best times and the algorithms:\n";
-    cout << "note: sizes are smaller due to taking to long on my computer\n\n";
+    cout << "sizes are smaller due to taking to long on my computer\n\n";
 
     cout << "                 N = 1000    \n";
     cout << "Random  :  " << Rand1K << " " << best1kRand << "\n";

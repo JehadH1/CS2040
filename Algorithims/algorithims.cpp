@@ -92,23 +92,24 @@ void insertionSort(vector<int> &vec)
 void mergeSort(vector<int> &vec)
 {
     int n = vec.size();
-    if (n > 1)
+    if (n <= 1) // Base case: stop recursion if the array has 1 or fewer elements
+        return;
+
+    vector<int> left;
+    vector<int> right;
+    // Copy
+    for (int i = 0; i < n; i++)
     {
-        vector<int> left;
-        vector<int> right;
-        // copy
-        for (int i = 0; i < n; i++)
-        {
-            if (i < (n / 2))
-                left.push_back(vec[i]);
-            else
-                right.push_back(vec[i]);
-        }
-        mergeSort(left);
-        mergeSort(right);
-        merge(left, right, vec);
+        if (i < (n / 2))
+            left.push_back(vec[i]);
+        else
+            right.push_back(vec[i]);
     }
+    mergeSort(left);
+    mergeSort(right);
+    merge(left, right, vec);
 }
+
 
 // Algorithim: Merge
 // Merges two sorted arrays into one sorted array
