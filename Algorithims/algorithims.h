@@ -1,21 +1,30 @@
-//a header file that includes the soring algorithims.
+#ifndef ALGORITHIMS_H
+#define ALGORITHIMS_H
+// a header file that includes the soring algorithims.
 
 #include <vector>
 using namespace std;
 
-//selection sort
-void selectionSort(vector<int> &vec);
+class Algorithims{
+public:
+    Algorithims() = default;
 
-//bubble sort
-void bubbleSort(vector<int> &vec);
+    // selection sort
+    void selectionSort(vector<int> &vec);
 
-//insertion sort
-void insertionSort(vector<int> &vec);
+    // bubble sort
+    void bubbleSort(vector<int> &vec);
 
-//merge sort
-void mergeSort(vector<int> &vec);
-void merge(vector<int> &left, vector<int> &right, vector<int> &vec);
+    // insertion sort
+    void insertionSort(vector<int> &vec);
 
-//quick sort
-void quickSort(vector<int> &vec, int left, int right);
-int partion(vector<int> &vec, int left, int right);
+    // merge sort
+    void mergeSort(vector<int> &vec);
+    void merge(vector<int> &left, vector<int> &right, vector<int> &vec);
+
+    // quick sort
+    void quickSort(vector<int> &vec, int left, int right);
+    int partition(vector<int>& vec, int left, int right);
+};
+
+#endif

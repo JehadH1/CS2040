@@ -1,6 +1,8 @@
 #include "algorithims.h"
 
+// algorithims.cpp
 // Jehad M Hamad
+// tuesday feb 18
 // Algorithim: Selection Sort
 // Sorts a given array by selection sort
 // Input: An array A[0..n − 1] of orderable elements
@@ -8,8 +10,7 @@
 // time complexity: O(n^2)
 // space complexity: O(1)
 // stability: Selection Sort is not stable
-
-void selectionSort(vector<int> &vec)
+void Algorithims::selectionSort(vector<int> &vec)
 {
     int n = vec.size();
     for (int i = 0; i < n - 1; i++)
@@ -19,9 +20,7 @@ void selectionSort(vector<int> &vec)
         {
             // find smallest element and keep that index
             if (vec[j] < vec[min])
-            {
                 min = j;
-            }
         }
         // swap
         int tmp = vec[i];
@@ -30,6 +29,9 @@ void selectionSort(vector<int> &vec)
     }
 }
 
+// algorithims.cpp
+// Jehad M Hamad
+// tuesday feb 18
 // Algorithim: Bubble Sort
 // Sorts a given array by bubble sort
 // Input: An array A[0..n − 1] of orderable elements
@@ -37,8 +39,7 @@ void selectionSort(vector<int> &vec)
 // time complexity: O(n^2)
 // space complexity: O(1)
 // stability: Bubble Sort is stable
-
-void bubbleSort(vector<int> &vec)
+void Algorithims::bubbleSort(vector<int> &vec)
 {
     int n = vec.size();
     for (int i = 0; i < n - 1; i++)
@@ -56,6 +57,9 @@ void bubbleSort(vector<int> &vec)
     }
 }
 
+// algorithims.cpp
+// Jehad M Hamad
+// tuesday feb 18
 // Algorithim: Insertion Sort
 // Sorts a given array by Insertion sort
 // Input: An array A[0..n − 1] of orderable elements
@@ -63,8 +67,7 @@ void bubbleSort(vector<int> &vec)
 // time complexity: O(n^2)
 // space complexity: O(1)
 // stability: Insertion Sort is stable
-
-void insertionSort(vector<int> &vec)
+void Algorithims::insertionSort(vector<int> &vec)
 {
     int n = vec.size();
     for (int i = 1; i < n; i++)
@@ -81,6 +84,9 @@ void insertionSort(vector<int> &vec)
     }
 }
 
+// algorithims.cpp
+// Jehad M Hamad
+// tuesday feb 18
 // Algorithim: Merge Sort
 // Sorts array A[0..n − 1] by recursive mergesort
 // Input: An array A[0..n − 1] of orderable elements
@@ -89,7 +95,7 @@ void insertionSort(vector<int> &vec)
 // space complexity: O(n)
 // stability: Merge Sort is stable
 
-void mergeSort(vector<int> &vec)
+void Algorithims::mergeSort(vector<int> &vec)
 {
     int n = vec.size();
     if (n <= 1) // Base case: stop recursion if the array has 1 or fewer elements
@@ -110,14 +116,15 @@ void mergeSort(vector<int> &vec)
     merge(left, right, vec);
 }
 
-
+// algorithims.cpp
+// Jehad M Hamad
+// tuesday feb 18
 // Algorithim: Merge
 // Merges two sorted arrays into one sorted array
 // Input: Arrays B[0..p − 1] and C[0..q − 1] both sorted
 // Output: Sorted array A[0..p + q − 1] of the elements of B and C
 // Needed for Merge Sort
-
-void merge(vector<int> &left, vector<int> &right, vector<int> &vec)
+void Algorithims::merge(vector<int> &left, vector<int> &right, vector<int> &vec)
 {
     int i = 0, j = 0, k = 0;
     int p = left.size();
@@ -153,6 +160,9 @@ void merge(vector<int> &left, vector<int> &right, vector<int> &vec)
     }
 }
 
+// algorithims.cpp
+// Jehad M Hamad
+// tuesday feb 18
 // Algorithim: Quick Sort
 // Sorts a subarray by quicksort
 // Input: Subarray of array A[0..n − 1], defined by its left and right
@@ -162,47 +172,49 @@ void merge(vector<int> &left, vector<int> &right, vector<int> &vec)
 // space complexity: O(logn)
 // stability: Merge Sort is not stable
 
-void quickSort(vector<int> &vec, int left, int right)
+void Algorithims::quickSort(vector<int> &vec, int left, int right)
 {
     if (left < right)
     {
-        int s = partion(vec, left, right);
+        int s = partition(vec, left, right);
         quickSort(vec, left, s - 1);
         quickSort(vec, s + 1, right);
     }
 }
 
+// algorithims.cpp
+// Jehad M Hamad
+// tuesday feb 18
 //  Partitions a subarray by Hoare’s algorithm, using the first element
 //  as a pivot
 //  Input: Subarray of array A[0..n − 1], defined by its left and right
 //  indices l and r (l < r)
 //  Output: Partition of A[l..r], with the split position returned as
 //  this function’s value
-int partion(vector<int> &vec, int left, int right)
+int Algorithims::partition(vector<int> &vec, int left, int right)
 {
     int pivot = vec[left];
 
     int i = left;
     int j = right;
 
-    while (true){
-        while(vec[i] <= pivot && i < right){
+    while (true)
+    {
+        while (vec[i] <= pivot && i < right)
             i++;
-        }
-        while(vec[j]>= pivot && j > left){
+        while (vec[j] >= pivot && j > left)
             j--;
-        }
-        if(i < j){
-            // Swap elements at indices `i` and `j`
-            int tmp = vec[i];
-            vec[i] = vec[j];
-            vec[j] = tmp;
-        } else {
-            // Swap pivot with element at index `j`
-            int tmp = vec[left];
-            vec[left] = vec[j];
-            vec[j] = tmp;
-            return j;
-        }
+        if (i >= j)
+            break; // breaking out early prevents undoing last swap
+
+        int tmp = vec[i]; // swap vec[i] and vec[j]
+        vec[i] = vec[j];
+        vec[j] = tmp;
     }
+
+    int tmp = vec[left]; // swap vec[left] and vec[j]
+    vec[left] = vec[j];
+    vec[j] = tmp;
+
+    return j;
 }
