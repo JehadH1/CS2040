@@ -11,6 +11,7 @@ using namespace std;
 int main()
 {
     Algorithims sorter;
+    VecBuilder vecBuild;
     srand(time(0));
     double best1kRand = 1000000, best10kRand = 1000000, best100kRand = 1000000;
     double best1kSort = 1000000, best10kSort = 1000000, best100kSort = 1000000;
@@ -22,24 +23,24 @@ int main()
 
     clock_t start, end;
     // build the three sizes (1k, 10k, 100k) vectors;
-    vector<vector<int>> rand1KVec = buildVector(10, 1000);
-    vector<vector<int>> rand10KVec = buildVector(10, 10000);
-    vector<vector<int>> rand100KVec = buildVector(10, 100000);
+    vector<vector<int>> rand1KVec = vecBuild.buildVector(10, 1000);
+    vector<vector<int>> rand10KVec = vecBuild.buildVector(10, 10000);
+    vector<vector<int>> rand100KVec = vecBuild.buildVector(10, 100000);
 
     // populate the three vectors with random numbers
-    buildRandomVector(rand1KVec);
-    buildRandomVector(rand10KVec);
-    buildRandomVector(rand100KVec);
+    vecBuild.buildRandomVector(rand1KVec);
+    vecBuild.buildRandomVector(rand10KVec);
+    vecBuild.buildRandomVector(rand100KVec);
 
     // build the three vectors of (1k 10k 100k) with sorted numbers
-    vector<vector<int>> sort1kVec = buildSortedVector(rand1KVec);
-    vector<vector<int>> sort10kVec = buildSortedVector(rand10KVec);
-    vector<vector<int>> sort100kVec = buildSortedVector(rand100KVec);
+    vector<vector<int>> sort1kVec = vecBuild.buildSortedVector(rand1KVec);
+    vector<vector<int>> sort10kVec = vecBuild.buildSortedVector(rand10KVec);
+    vector<vector<int>> sort100kVec = vecBuild.buildSortedVector(rand100KVec);
 
     // build the three vectors of (1k 10k 100k) with rev sorted numbers
-    vector<vector<int>> revSort1kVec = buildReverseSortedVector(rand1KVec);
-    vector<vector<int>> revSort10kVec = buildReverseSortedVector(rand10KVec);
-    vector<vector<int>> revSort100kVec = buildReverseSortedVector(rand100KVec);
+    vector<vector<int>> revSort1kVec = vecBuild.buildReverseSortedVector(rand1KVec);
+    vector<vector<int>> revSort10kVec = vecBuild.buildReverseSortedVector(rand10KVec);
+    vector<vector<int>> revSort100kVec = vecBuild.buildReverseSortedVector(rand100KVec);
 
     // selection Sort
     vector<vector<int>> selectRand1k = rand1KVec;

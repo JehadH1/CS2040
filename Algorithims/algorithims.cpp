@@ -1,8 +1,8 @@
 #include "algorithims.h"
 
-// algorithims.cpp
-// Jehad M Hamad
-// tuesday feb 18
+// File: algorithims.cpp
+// Name: Jehad M Hamad
+// Date: Tuesday Feb 18
 // Algorithim: Selection Sort
 // Sorts a given array by selection sort
 // Input: An array A[0..n − 1] of orderable elements
@@ -29,9 +29,9 @@ void Algorithims::selectionSort(vector<int> &vec)
     }
 }
 
-// algorithims.cpp
-// Jehad M Hamad
-// tuesday feb 18
+// File: algorithims.cpp
+// Name: Jehad M Hamad
+// Date: Tuesday Feb 18
 // Algorithim: Bubble Sort
 // Sorts a given array by bubble sort
 // Input: An array A[0..n − 1] of orderable elements
@@ -57,9 +57,9 @@ void Algorithims::bubbleSort(vector<int> &vec)
     }
 }
 
-// algorithims.cpp
-// Jehad M Hamad
-// tuesday feb 18
+// File: algorithims.cpp
+// Name: Jehad M Hamad
+// Date: Tuesday Feb 18
 // Algorithim: Insertion Sort
 // Sorts a given array by Insertion sort
 // Input: An array A[0..n − 1] of orderable elements
@@ -84,9 +84,9 @@ void Algorithims::insertionSort(vector<int> &vec)
     }
 }
 
-// algorithims.cpp
-// Jehad M Hamad
-// tuesday feb 18
+// File: algorithims.cpp
+// Name: Jehad M Hamad
+// Date: Tuesday Feb 18
 // Algorithim: Merge Sort
 // Sorts array A[0..n − 1] by recursive mergesort
 // Input: An array A[0..n − 1] of orderable elements
@@ -116,9 +116,9 @@ void Algorithims::mergeSort(vector<int> &vec)
     merge(left, right, vec);
 }
 
-// algorithims.cpp
-// Jehad M Hamad
-// tuesday feb 18
+// File: algorithims.cpp
+// Name: Jehad M Hamad
+// Date: Tuesday Feb 18
 // Algorithim: Merge
 // Merges two sorted arrays into one sorted array
 // Input: Arrays B[0..p − 1] and C[0..q − 1] both sorted
@@ -160,9 +160,9 @@ void Algorithims::merge(vector<int> &left, vector<int> &right, vector<int> &vec)
     }
 }
 
-// algorithims.cpp
-// Jehad M Hamad
-// tuesday feb 18
+// File: algorithims.cpp
+// Name: Jehad M Hamad
+// Date: Tuesday Feb 18
 // Algorithim: Quick Sort
 // Sorts a subarray by quicksort
 // Input: Subarray of array A[0..n − 1], defined by its left and right
@@ -182,9 +182,9 @@ void Algorithims::quickSort(vector<int> &vec, int left, int right)
     }
 }
 
-// algorithims.cpp
-// Jehad M Hamad
-// tuesday feb 18
+// File: algorithims.cpp
+// Name: Jehad M Hamad
+// Date: Tuesday Feb 18
 //  Partitions a subarray by Hoare’s algorithm, using the first element
 //  as a pivot
 //  Input: Subarray of array A[0..n − 1], defined by its left and right
