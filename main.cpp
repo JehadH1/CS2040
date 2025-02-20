@@ -2,6 +2,7 @@
 #include <iomanip>
 #include <vector>
 #include <cstdlib>
+#include <string>
 #include "Algorithims/algorithims.h"
 #include "VecBuilder/vecBuilder.h"
 
@@ -10,6 +11,13 @@ using namespace std;
 int main()
 {
     srand(time(0));
+    double best1kRand = 1000000, best10kRand = 1000000, best100kRand = 1000000;
+    double best1kSort = 1000000, best10kSort = 1000000, best100kSort = 1000000;
+    double best1kRevSort = 1000000, best10kRevSort = 1000000, best100kRevSort = 1000000;
+
+    string Rand1K, Rand10k, Rand100k;
+    string Sort1K, Sort10K, Sort10K;
+    string RevSort1K, RevSort10K, RevSort10K;
 
     clock_t start, end;
     // build the three sizes (1k, 10k, 100k) vectors;
@@ -46,9 +54,15 @@ int main()
         selectionSort(row);
         end = clock();
         double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
+        if (time_taken < best1kRand)
+        {
+            best1kRand = time_taken;
+            Rand1K = "Selection sort";
+        }
         cout << "| " << setw(6) << fixed << setprecision(5) << time_taken << " |";
     }
     cout << endl;
+
     cout << "Sorted   ";
     for (auto row : selectSort1k)
     {
@@ -56,9 +70,15 @@ int main()
         selectionSort(row);
         end = clock();
         double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
+        if (time_taken < best1kSort)
+        {
+            best1kSort = time_taken;
+            Sort1K = "Selection sort";
+        }
         cout << "| " << setw(6) << fixed << setprecision(5) << time_taken << " |";
     }
     cout << endl;
+
     cout << "Rev Sort ";
     for (auto row : selectRevSort1k)
     {
@@ -66,10 +86,16 @@ int main()
         selectionSort(row);
         end = clock();
         double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
+        if (time_taken < best1kRevSort)
+        {
+            best1kRevSort = time_taken;
+            RevSort1K = "Selection sort";
+        }
         cout << "| " << setw(6) << fixed << setprecision(5) << time_taken << " |";
     }
     cout << endl;
     cout << endl;
+
     vector<vector<int>> selectRand10k = rand10KVec;
     vector<vector<int>> selectSort10k = sort10kVec;
     vector<vector<int>> selectRevSort10k = revSort10kVec;
@@ -142,10 +168,61 @@ int main()
     }
     cout << endl;
     cout << endl;
+
     // Bubble sort
+
     vector<vector<int>> bubbleRand1k = rand1KVec;
+    cout << "The Algorithim is Bubble Sort \n";
+    cout << "The size is 1K \n";
+    cout << "Random   ";
+    for (auto row : bubbleRand1k)
+    {
+        start = clock();
+        bubbleSort(row);
+        end = clock();
+        double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
+        if (time_taken < best1kRand)
+        {
+            best1kRand = time_taken;
+            Rand1K = "Bubble sort";
+        }
+        cout << "| " << setw(6) << fixed << setprecision(5) << time_taken << " |";
+    }
+    cout << endl;
+
     vector<vector<int>> bubbleSort1k = sort1kVec;
+    cout << "Sorted   ";
+    for (auto row : bubbleSort1k)
+    {
+        start = clock();
+        bubbleSort(row);
+        end = clock();
+        double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
+        if (time_taken < best1kRand)
+        {
+            best1kSort = time_taken;
+            Rand1K = "Bubble sort";
+        }
+        cout << "| " << setw(6) << fixed << setprecision(5) << time_taken << " |";
+    }
+    cout << endl;
+
     vector<vector<int>> bubbleRevSort1k = revSort1kVec;
+    cout << "Rev Sort ";
+    for (auto row : bubbleRevSort1k)
+    {
+        start = clock();
+        bubbleSort(row);
+        end = clock();
+        double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
+        if (time_taken < best1kRand)
+        {
+            best1kSort = time_taken;
+            Rand1K = "Bubble sort";
+        }
+        cout << "| " << setw(6) << fixed << setprecision(5) << time_taken << " |";
+    }
+    cout << endl;
 
     vector<vector<int>> bubbleRand10k = rand10KVec;
     vector<vector<int>> bubbleSort10k = sort10kVec;
