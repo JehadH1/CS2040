@@ -30,8 +30,8 @@ void timeAlgorithim(const string &algoName, const string &type, vector<vector<in
                     Algorithims &sorter, void (Algorithims::*sortFunc)(vector<int> &),
                     double &time, string &bestAlgoName)
 {
-    double avetime;
-    double count;
+    double avetime = 0.00;
+    double count = 0.0;
 
     cout << type;
 

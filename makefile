@@ -6,4 +6,7 @@ all: main.cpp $(ALGORITHIMS_DIR)/algorithims.cpp $(VECBUILDER_DIR)/vecBuilder.cp
 	$(CC) $(CC_FLAGS) $^ -o a.out
 
 run: 
-	./a.out
+	./a.out 
+
+check: main.cpp $(ALGORITHIMS_DIR)/algorithims.cpp $(VECBUILDER_DIR)/vecBuilder.cpp
+	cppcheck $^
