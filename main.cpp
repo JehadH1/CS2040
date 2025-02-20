@@ -74,7 +74,10 @@ void timeAlgorithim(const string &algoName, const string &type, vector<vector<in
 // File: main.cpp
 // Name: Jehad M Hamad
 // Date: Tuesday Feb 20
-// Just has eveything to output my all the algorithims
+// evaluates the different runtime of quicksort, mergesort, insertion sort, 
+// selection sort, and bubble sort, and displays the results by using the timeAlgorithim
+// Input: No input
+// Output: the best times for all the diff sizes  
 int main()
 {
     Algorithims sorter;
