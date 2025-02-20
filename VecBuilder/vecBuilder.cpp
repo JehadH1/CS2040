@@ -5,7 +5,7 @@
 // date: Tuesday Feb 18
 // builds you a 2D vector of any size that you want
 vector<vector<int>> VecBuilder::buildVector(int row, int col){
-    vector<vector<int>> vec(row, vector(col, 0));
+    vector<vector<int>> vec(row, vector<int>(col, 0));
     return vec;
 }
 

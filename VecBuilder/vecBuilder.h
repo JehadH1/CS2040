@@ -6,7 +6,7 @@
 #include <vector>
 #include <cstdlib>
 #include <algorithm>
-
+#include <functional>
 using namespace std;
 
 class VecBuilder

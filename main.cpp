@@ -30,24 +30,22 @@ void timeAlgorithim(const string &algoName, const string &type, vector<vector<in
                     Algorithims &sorter, void (Algorithims::*sortFunc)(vector<int> &),
                     double &time, string &bestAlgoName)
 {
-    double avetime = 0.0;
-    double count = 0.0;
+    double avetime;
+    double count;
 
     cout << type;
 
     for (auto &row : vec)
     {
-        // Start timing using high-resolution clock for better accuracy
-        auto start = chrono::high_resolution_clock::now();
+        clock_t start = clock();
 
         // Perform the sorting operation
         (sorter.*sortFunc)(row);
 
-        // End timing
-        auto end = chrono::high_resolution_clock::now();
+        clock_t end = clock();
 
         // Calculate time taken in seconds
-        double time_taken = chrono::duration<double>(end - start).count();
+        double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
 
         count++;               // Increment row count
         avetime += time_taken; // Accumulate total time
@@ -74,10 +72,10 @@ void timeAlgorithim(const string &algoName, const string &type, vector<vector<in
 // File: main.cpp
 // Name: Jehad M Hamad
 // Date: Tuesday Feb 20
-// evaluates the different runtime of quicksort, mergesort, insertion sort, 
+// evaluates the different runtime of quicksort, mergesort, insertion sort,
 // selection sort, and bubble sort, and displays the results by using the timeAlgorithim
 // Input: No input
-// Output: the best times for all the diff sizes  
+// Output: the best times for all the diff sizes
 int main()
 {
     Algorithims sorter;
@@ -94,7 +92,6 @@ int main()
     string Sort10, Sort100, Sort1K, Sort10K, Sort100K, Sort1M, Sort10M;
     string RevSort10, RevSort100, RevSort1K, RevSort10K, RevSort100K, RevSort1M, RevSort10M;
 
-    clock_t start, end;
     // build the three sizes (10, 100, 1k, 10k, 100k, 1M, 10M) vectors;
     vector<vector<int>> rand10Vec = vecBuild.buildVector(10, 10);
     vector<vector<int>> rand100Vec = vecBuild.buildVector(10, 100);
@@ -131,30 +128,28 @@ int main()
     vector<vector<int>> revSort1MVec = vecBuild.buildReverseSortedVector(rand1MVec);
     vector<vector<int>> revSort10MVec = vecBuild.buildReverseSortedVector(rand10MVec);
 
+    cout << "\n                   Welcome to the Sorting Algorithim Test                   \n";
+    cout << "                             Time is in seconds                               \n\n";
+
     // selection Sort
     cout << "The Algorithim is Selection Sort \n\n";
+    // Making 2D vector for selection sort of size 10 for rand, sorted, and rev sorted
+    // then makes copies of the three vectors that match
+    // Calls the time Algorithim for selction sort for size 10 for the three different types
+    // And so on, for the rest of the different sizes.
 
-
-    //Making 2D vector for selection sort of size 10 for rand, sorted, and rev sorted
-    //then makes copies of the three vectors that match
     vector<vector<int>> selectRand10 = rand10Vec;
     vector<vector<int>> selectSort10 = sort10Vec;
     vector<vector<int>> selectRevSort10 = revSort10Vec;
-    //Calles the time Algorithim for selction sort for size 10 for the three different types
     cout << "The size is n = 10 \n";
     timeAlgorithim("Selection", "Random  ", selectRand10, sorter, &Algorithims::selectionSort, random_10, Rand10);
     timeAlgorithim("Selection", "Sort    ", selectSort10, sorter, &Algorithims::selectionSort, sort_10, Sort10);
     timeAlgorithim("Selection", "Rev Sort", selectRevSort10, sorter, &Algorithims::selectionSort, revSort_10, RevSort10);
     cout << endl;
 
-    //Making 2D vector for selection sort of size 100 for rand, sorted, and rev sorted
-    //then makes copies of the three vectors that match
-    //And so on, for the rest of the different sizes and different algorithims 
     vector<vector<int>> selectRand100 = rand100Vec;
     vector<vector<int>> selectSort100 = sort100Vec;
     vector<vector<int>> selectRevSort100 = revSort100Vec;
-    //Calles the time Algorithim for selction sort for size 100 for the three different type
-    //And so on, for the rest of the different sizes and different algorithims 
     cout << "The size is n = 100 \n";
     timeAlgorithim("Selection", "Random  ", selectRand100, sorter, &Algorithims::selectionSort, random_100, Rand100);
     timeAlgorithim("Selection", "Sort    ", selectSort100, sorter, &Algorithims::selectionSort, sort_100, Sort100);
@@ -191,6 +186,10 @@ int main()
 
     // Bubble Sort
     cout << "The Algorithim is Bubble Sort \n\n";
+    // Making 2D vector for Bubble sort of size 10 for rand, sorted, and rev sorted
+    // then makes copies of the three vectors that match
+    // Calls the time Algorithim for Bubble sort for size 10 for the three different types
+    // And so on, for the rest of the different sizes.
 
     vector<vector<int>> bubbleRand10 = rand10Vec;
     vector<vector<int>> bubbleSort10 = sort10Vec;
@@ -240,6 +239,10 @@ int main()
 
     // Insertion Sort
     cout << "The Algorithim is Insertion Sort \n\n";
+    // Making 2D vector for Insertion sort of size 10 for rand, sorted, and rev sorted
+    // then makes copies of the three vectors that match
+    // Calls the time Algorithim for Insertion sort for size 10 for the three different types
+    // And so on, for the rest of the different sizes.
 
     vector<vector<int>> insertionRand10 = rand10Vec;
     vector<vector<int>> insertionSort10 = sort10Vec;
@@ -287,6 +290,10 @@ int main()
 
     // Merge Sort
     cout << "The Algorithim is Merge Sort \n\n";
+    // Making 2D vector for Merge sort of size 10 for rand, sorted, and rev sorted
+    // then makes copies of the three vectors that match
+    // Calls the time Algorithim for Merge sort for size 10 for the three different types
+    // And so on, for the rest of the different sizes.
 
     vector<vector<int>> mergeRand10 = rand10Vec;
     vector<vector<int>> mergeSort10 = sort10Vec;
@@ -353,9 +360,12 @@ int main()
 
     cout << "\n\n";
 
-    //Quick Sort
+    // Quick Sort
     cout << "The Algorithim is Quick Sort \n\n";
-
+    // Making 2D vector for Quick sort of size 10 for rand, sorted, and rev sorted
+    // then makes copies of the three vectors that match
+    // Calls the time Algorithim for Quick sort for size 10 for the three different types
+    // And so on, for the rest of the different sizes.
     vector<vector<int>> quickRand10 = rand10Vec;
     vector<vector<int>> quickSort10 = sort10Vec;
     vector<vector<int>> quickRevSort10 = revSort10Vec;
@@ -421,8 +431,12 @@ int main()
 
     cout << "\n\n";
 
-    //prints the best times and algorithims for the different types(rand, sorted, rev sorted), and sizes.
-    //will happen for size 100, 1000, 1k and so on.
+    // prints the best times and algorithims for the different types(rand, sorted, rev sorted), and sizes.
+    // will happen for size 100, 1000, 1k and so on.
+
+    cout << "                              Best Algorithms                                \n\n";
+    cout << "                             Time is in seconds                               \n\n";
+
     cout << "                 N = 10    \n";
     cout << "Random    :  " << Rand10 << " The Average time was " << random_10 << "\n";
     cout << "Sort      :  " << Sort10 << " The Average time was " << sort_10 << "\n";
