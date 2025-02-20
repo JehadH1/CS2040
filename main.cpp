@@ -82,7 +82,6 @@ int main()
     vector<vector<int>> revSort10MVec = vecBuild.buildReverseSortedVector(rand10MVec);
 
     // selection Sort
-
     cout << "The Algorithim is Selection Sort \n\n";
 
     vector<vector<int>> selectRand10 = rand10Vec;
@@ -121,13 +120,62 @@ int main()
     timeAlgorithim("Selection", "Rev Sort", selectRevSort10k, sorter, &Algorithims::selectionSort, revSort_10K, RevSort10K);
     cout << endl;
 
-    vector<vector<int>> selectRand100k = rand100KVec;
-    vector<vector<int>> selectSort100k = sort100kVec;
-    vector<vector<int>> selectRevSort100k = revSort100kVec;
-    cout << "The size is n = 100000 \n";
-    timeAlgorithim("Selection", "Random  ", selectRand100k, sorter, &Algorithims::selectionSort, random_100K, Rand100K);
-    timeAlgorithim("Selection", "Sort    ", selectSort100k, sorter, &Algorithims::selectionSort, sort_100K, Sort100K);
-    timeAlgorithim("Selection", "Rev Sort", selectRevSort100k, sorter, &Algorithims::selectionSort, revSort_100K, RevSort100K);
+    // vector<vector<int>> selectRand100k = rand100KVec;
+    // vector<vector<int>> selectSort100k = sort100kVec;
+    // vector<vector<int>> selectRevSort100k = revSort100kVec;
+    // cout << "The size is n = 100000 \n";
+    // timeAlgorithim("Selection", "Random  ", selectRand100k, sorter, &Algorithims::selectionSort, random_100K, Rand100K);
+    // timeAlgorithim("Selection", "Sort    ", selectSort100k, sorter, &Algorithims::selectionSort, sort_100K, Sort100K);
+    // timeAlgorithim("Selection", "Rev Sort", selectRevSort100k, sorter, &Algorithims::selectionSort, revSort_100K, RevSort100K);
+
+    cout << "\n\n";
+
+    // selection Sort
+    cout << "The Algorithim is Bubble Sort \n\n";
+
+    vector<vector<int>> bubbleRand10 = rand10Vec;
+    vector<vector<int>> bubbleSort10 = sort10Vec;
+    vector<vector<int>> bubbleRevSort10 = revSort10Vec;
+    cout << "The size is n = 10 \n";
+    timeAlgorithim("Bubble", "Random  ", bubbleRand10, sorter, &Algorithims::bubbleSort, random_10, Rand10);
+    timeAlgorithim("Bubble", "Sort    ", bubbleSort10, sorter, &Algorithims::bubbleSort, sort_10, Sort10);
+    timeAlgorithim("Bubble", "Rev Sort", bubbleRevSort10, sorter, &Algorithims::bubbleSort, revSort_10, RevSort10);
+    cout << endl;
+
+    vector<vector<int>> bubbleRand100 = rand100Vec;
+    vector<vector<int>> bubbleSort100 = sort100Vec;
+    vector<vector<int>> bubbleRevSort100 = revSort100Vec;
+    cout << "The size is n = 100 \n";
+    timeAlgorithim("Bubble", "Random  ", bubbleRand100, sorter, &Algorithims::bubbleSort, random_100, Rand100);
+    timeAlgorithim("Bubble", "Sort    ", bubbleSort100, sorter, &Algorithims::bubbleSort, sort_100, Sort100);
+    timeAlgorithim("Bubble", "Rev Sort", bubbleRevSort100, sorter, &Algorithims::bubbleSort, revSort_100, RevSort100);
+    cout << endl;
+
+    vector<vector<int>> bubbleRand1k = rand1KVec;
+    vector<vector<int>> bubbleort1k = sort1kVec;
+    vector<vector<int>> bubbleRevSort1k = revSort1kVec;
+    cout << "The size is n = 1000 \n";
+    timeAlgorithim("Bubble", "Random  ", bubbleRand1k, sorter, &Algorithims::bubbleSort, random_1K, Rand1K);
+    timeAlgorithim("Bubble", "Sort    ", bubbleort1k, sorter, &Algorithims::bubbleSort, sort_1K, Sort1K);
+    timeAlgorithim("Bubble", "Rev Sort", bubbleRevSort1k, sorter, &Algorithims::bubbleSort, revSort_1K, RevSort1K);
+    cout << endl;
+
+    vector<vector<int>> bubbleRand10k = rand10KVec;
+    vector<vector<int>> bubbleSort10k = sort10kVec;
+    vector<vector<int>> bubbleRevSort10k = revSort10kVec;
+    cout << "The size is n = 10000 \n";
+    timeAlgorithim("Bubble", "Random  ", bubbleRand10k, sorter, &Algorithims::bubbleSort, random_10K, Rand10K);
+    timeAlgorithim("Bubble", "Sort    ", bubbleSort10k, sorter, &Algorithims::bubbleSort, sort_10K, Sort10K);
+    timeAlgorithim("Bubble", "Rev Sort", bubbleRevSort10k, sorter, &Algorithims::bubbleSort, revSort_10K, RevSort10K);
+    cout << endl;
+
+    // vector<vector<int>> bubbleRand100k = rand100KVec;
+    // vector<vector<int>> bubbleSort100k = sort100kVec;
+    // vector<vector<int>> bubbleRevSort100k = revSort100kVec;
+    // cout << "The size is n = 100000 \n";
+    // timeAlgorithim("Bubble", "Random  ", bubbleRand100k, sorter, &Algorithims::bubbleSort, random_100K, Rand100K);
+    // timeAlgorithim("Bubble", "Sort    ", bubbleSort100k, sorter, &Algorithims::bubbleSort, sort_100K, Sort100K);
+    // timeAlgorithim("Bubble", "Rev Sort", bubbleRevSort100k, sorter, &Algorithims::bubbleSort, revSort_100K, RevSort100K);
 
     cout << "\n\n";
 
