@@ -10,6 +10,8 @@ using namespace std;
 
 void timeAlgorithim(const string &algoName, const string &type, vector<vector<int>> &vec, Algorithims &sorter, void (Algorithims::*sortFunc)(vector<int> &), double &time, string &bestAlgoName)
 {
+    double avetime;
+    double count;
     cout << type;
 
     for (auto &row : vec)
@@ -18,12 +20,16 @@ void timeAlgorithim(const string &algoName, const string &type, vector<vector<in
         (sorter.*sortFunc)(row);
         clock_t end = clock();
         double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
-        if (time_taken < time)
-        {
-            time = time_taken;
-            bestAlgoName = algoName;
-        }
+        count++;
+        avetime += time_taken;
         cout << "| " << setw(6) << fixed << setprecision(5) << time_taken << " |";
+    }
+    avetime = avetime / count;
+    cout << "Ave time " << setw(6) << fixed << avetime;
+    if (avetime < time)
+    {
+        time = avetime;
+        bestAlgoName = algoName;
     }
     cout << "\n";
 }
@@ -32,7 +38,7 @@ int main()
 {
     Algorithims sorter;
     VecBuilder vecBuild;
-    srand(time(0));
+    srand(10);
 
     // Initialize double variables for random, sorted, and reversed sorted values
     double random_10 = 1000000, random_100 = 1000000, random_1K = 1000000, random_10K = 1000000, random_100K = 1000000, random_1M = 1000000, random_10M = 1000000;
@@ -180,31 +186,31 @@ int main()
     cout << "\n\n";
 
     cout << "                 N = 10    \n";
-    cout << "Random    :  " << Rand10 << " " << random_10 << "\n";
-    cout << "Sort      :  " << Sort10 << " " << sort_10 << "\n";
-    cout << "Rev Sort  :  " << RevSort10 << " " << revSort_10 << "\n";
+    cout << "Random    :  " << Rand10 << " The Average time was " << random_10 << "\n";
+    cout << "Sort      :  " << Sort10 << " The Average time was " << sort_10 << "\n";
+    cout << "Rev Sort  :  " << RevSort10 << " The Average time was " << revSort_10 << "\n";
     cout << endl;
 
     cout << "                 N = 100    \n";
-    cout << "Random    :  " << Rand100 << " " << random_100 << "\n";
-    cout << "Sort      :  " << Sort100 << " " << sort_100 << "\n";
-    cout << "Rev Sort  :  " << RevSort100 << " " << revSort_100 << "\n";
+    cout << "Random    :  " << Rand100 << " The Average time was " << random_100 << "\n";
+    cout << "Sort      :  " << Sort100 << " The Average time was " << sort_100 << "\n";
+    cout << "Rev Sort  :  " << RevSort100 << " The Average time was " << revSort_100 << "\n";
     cout << endl;
 
     cout << "                 N = 1000    \n";
-    cout << "Random    :  " << Rand1K << " " << random_1K << "\n";
-    cout << "Sort      :  " << Sort1K << " " << sort_1K << "\n";
-    cout << "Rev Sort  :  " << RevSort1K << " " << revSort_1K << "\n";
+    cout << "Random    :  " << Rand1K << " The Average time was " << random_1K << "\n";
+    cout << "Sort      :  " << Sort1K << " The Average time was " << sort_1K << "\n";
+    cout << "Rev Sort  :  " << RevSort1K << " The Average time was " << revSort_1K << "\n";
     cout << endl;
 
     cout << "                 N = 10000    \n";
-    cout << "Random    :  " << Rand10K << " " << random_10K << "\n";
-    cout << "Sort      :  " << Sort10K << " " << sort_10K << "\n";
-    cout << "Rev Sort  :  " << RevSort10K << " " << revSort_10K << "\n";
+    cout << "Random    :  " << Rand10K << " The Average time was " << random_10K << "\n";
+    cout << "Sort      :  " << Sort10K << " The Average time was " << sort_10K << "\n";
+    cout << "Rev Sort  :  " << RevSort10K << " The Average time was " << revSort_10K << "\n";
     cout << endl;
 
     cout << "                 N = 100000   \n";
-    cout << "Random    :  " << Rand100K << " " << random_100K << "\n";
-    cout << "Sort      :  " << Sort100K << " " << sort_100K << "\n";
-    cout << "Rev Sort  :  " << RevSort100K << " " << revSort_100K << "\n";
+    cout << "Random    :  " << Rand100K << " The Average time was " << random_100K << "\n";
+    cout << "Sort      :  " << Sort100K << " The Average time was " << sort_100K << "\n";
+    cout << "Rev Sort  :  " << RevSort100K << " The Average time was " << revSort_100K << "\n";
 }
