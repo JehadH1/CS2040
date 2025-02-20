@@ -34,49 +34,114 @@ int main()
 
     // selection Sort
     vector<vector<int>> selectRand1k = rand1KVec;
-    cout << "The Algorithim is Selection Sort \nThe size is 1K \n";
+    vector<vector<int>> selectSort1k = sort1kVec;
+    vector<vector<int>> selectRevSort1k = revSort1kVec;
+
+    cout << "The Algorithim is Selection Sort \n";
+    cout << "The size is 1K \n";
     cout << "Random   ";
     for (auto row : selectRand1k)
     {
         start = clock();
-        bubbleSort(row);
+        selectionSort(row);
         end = clock();
         double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
-        cout << time_taken << setprecision(5) << "||";
+        cout << "| " << setw(6) << fixed << setprecision(5) << time_taken << " |";
     }
     cout << endl;
-
-    vector<vector<int>> selectSort1k = sort1kVec;
     cout << "Sorted   ";
     for (auto row : selectSort1k)
     {
         start = clock();
-        bubbleSort(row);
+        selectionSort(row);
         end = clock();
         double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
-        cout << time_taken << setprecision(5) << "||";
+        cout << "| " << setw(6) << fixed << setprecision(5) << time_taken << " |";
     }
     cout << endl;
-    vector<vector<int>> selectRevSort1k = revSort1kVec;
     cout << "Rev Sort ";
     for (auto row : selectRevSort1k)
     {
         start = clock();
-        bubbleSort(row);
+        selectionSort(row);
         end = clock();
         double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
-        cout << time_taken << setprecision(5) << "||";
+        cout << "| " << setw(6) << fixed << setprecision(5) << time_taken << " |";
     }
     cout << endl;
-
+    cout << endl;
     vector<vector<int>> selectRand10k = rand10KVec;
     vector<vector<int>> selectSort10k = sort10kVec;
     vector<vector<int>> selectRevSort10k = revSort10kVec;
 
+    cout << "The size is 10k \n";
+    cout << "Random   ";
+    for (auto row : selectRand10k)
+    {
+        start = clock();
+        selectionSort(row);
+        end = clock();
+        double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
+        cout << "| " << setw(6) << fixed << setprecision(5) << time_taken << " |";
+    }
+    cout << endl;
+    cout << "Sorted   ";
+    for (auto row : selectSort10k)
+    {
+        start = clock();
+        selectionSort(row);
+        end = clock();
+        double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
+        cout << "| " << setw(6) << fixed << setprecision(5) << time_taken << " |";
+    }
+    cout << endl;
+    cout << "Rev Sort ";
+    for (auto row : selectRevSort10k)
+    {
+        start = clock();
+        selectionSort(row);
+        end = clock();
+        double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
+        cout << "| " << setw(6) << fixed << setprecision(5) << time_taken << " |";
+    }
+    cout << endl;
+    cout << endl;
+
     vector<vector<int>> selectRand100k = rand100KVec;
     vector<vector<int>> selectSort100k = sort100kVec;
     vector<vector<int>> selectRevSort100k = revSort100kVec;
-
+    cout << "The size is 100k \n";
+    cout << "Random   ";
+    for (auto row : selectRand100k)
+    {
+        start = clock();
+        selectionSort(row);
+        end = clock();
+        double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
+        cout << "| " << setw(6) << fixed << setprecision(5) << time_taken << " |";
+    }
+    cout << endl;
+    cout << "Sorted   ";
+    for (auto row : selectSort100k)
+    {
+        start = clock();
+        selectionSort(row);
+        end = clock();
+        double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
+        cout << "| " << setw(6) << fixed << setprecision(5) << time_taken << " |";
+    }
+    cout << endl;
+    cout << "Rev Sort ";
+    for (auto row : selectRevSort100k)
+    {
+        start = clock();
+        selectionSort(row);
+        end = clock();
+        double time_taken = double(end - start) / double(CLOCKS_PER_SEC);
+        cout << "| " << setw(6) << fixed << setprecision(5) << time_taken << " |";
+    }
+    cout << endl;
+    cout << endl;
     // Bubble sort
     vector<vector<int>> bubbleRand1k = rand1KVec;
     vector<vector<int>> bubbleSort1k = sort1kVec;
