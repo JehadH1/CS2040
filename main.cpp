@@ -158,11 +158,11 @@ int main()
     cout << endl;
 
     vector<vector<int>> bubbleRand1k = rand1KVec;
-    vector<vector<int>> bubbleort1k = sort1kVec;
+    vector<vector<int>> bubbleSort1k = sort1kVec;
     vector<vector<int>> bubbleRevSort1k = revSort1kVec;
     cout << "The size is n = 1000 \n";
     timeAlgorithim("Bubble", "Random  ", bubbleRand1k, sorter, &Algorithims::bubbleSort, random_1K, Rand1K);
-    timeAlgorithim("Bubble", "Sort    ", bubbleort1k, sorter, &Algorithims::bubbleSort, sort_1K, Sort1K);
+    timeAlgorithim("Bubble", "Sort    ", bubbleSort1k, sorter, &Algorithims::bubbleSort, sort_1K, Sort1K);
     timeAlgorithim("Bubble", "Rev Sort", bubbleRevSort1k, sorter, &Algorithims::bubbleSort, revSort_1K, RevSort1K);
     cout << endl;
 
@@ -185,7 +185,7 @@ int main()
 
     cout << "\n\n";
 
-    // Bubble Sort
+    // Insertion Sort
     cout << "The Algorithim is Insertion Sort \n\n";
 
     vector<vector<int>> insertionRand10 = rand10Vec;
@@ -207,11 +207,11 @@ int main()
     cout << endl;
 
     vector<vector<int>> insertionRand1k = rand1KVec;
-    vector<vector<int>> insertionort1k = sort1kVec;
+    vector<vector<int>> insertionSort1k = sort1kVec;
     vector<vector<int>> insertionRevSort1k = revSort1kVec;
     cout << "The size is n = 1000 \n";
     timeAlgorithim("Insertion", "Random  ", insertionRand1k, sorter, &Algorithims::insertionSort, random_1K, Rand1K);
-    timeAlgorithim("Insertion", "Sort    ", insertionort1k, sorter, &Algorithims::insertionSort, sort_1K, Sort1K);
+    timeAlgorithim("Insertion", "Sort    ", insertionSort1k, sorter, &Algorithims::insertionSort, sort_1K, Sort1K);
     timeAlgorithim("Insertion", "Rev Sort", insertionRevSort1k, sorter, &Algorithims::insertionSort, revSort_1K, RevSort1K);
     cout << endl;
 
@@ -232,6 +232,72 @@ int main()
     // timeAlgorithim("Insertion", "Sort    ", insertionSort100k, sorter, &Algorithims::insertionSort, sort_100K, Sort100K);
     // timeAlgorithim("Insertion", "Rev Sort", insertionRevSort100k, sorter, &Algorithims::insertionSort, revSort_100K, RevSort100K);
 
+    // merge Sort
+    cout << "The Algorithim is Merge Sort \n\n";
+
+    vector<vector<int>> mergeRand10 = rand10Vec;
+    vector<vector<int>> mergeSort10 = sort10Vec;
+    vector<vector<int>> mergeRevSort10 = revSort10Vec;
+    cout << "The size is n = 10 \n";
+    timeAlgorithim("Merge", "Random  ", mergeRand10, sorter, &Algorithims::mergeSort, random_10, Rand10);
+    timeAlgorithim("Merge", "Sort    ", mergeSort10, sorter, &Algorithims::mergeSort, sort_10, Sort10);
+    timeAlgorithim("Merge", "Rev Sort", mergeRevSort10, sorter, &Algorithims::mergeSort, revSort_10, RevSort10);
+    cout << endl;
+
+    vector<vector<int>> mergeRand100 = rand100Vec;
+    vector<vector<int>> mergeSort100 = sort100Vec;
+    vector<vector<int>> mergeRevSort100 = revSort100Vec;
+    cout << "The size is n = 100 \n";
+    timeAlgorithim("Merge", "Random  ", mergeRand100, sorter, &Algorithims::mergeSort, random_100, Rand100);
+    timeAlgorithim("Merge", "Sort    ", mergeSort100, sorter, &Algorithims::mergeSort, sort_100, Sort100);
+    timeAlgorithim("Merge", "Rev Sort", mergeRevSort100, sorter, &Algorithims::mergeSort, revSort_100, RevSort100);
+    cout << endl;
+
+    vector<vector<int>> mergeRand1k = rand1KVec;
+    vector<vector<int>> mergeSort1k = sort1kVec;
+    vector<vector<int>> mergeRevSort1k = revSort1kVec;
+    cout << "The size is n = 1,000 \n";
+    timeAlgorithim("Merge", "Random  ", mergeRand1k, sorter, &Algorithims::mergeSort, random_1K, Rand1K);
+    timeAlgorithim("Merge", "Sort    ", mergeSort1k, sorter, &Algorithims::mergeSort, sort_1K, Sort1K);
+    timeAlgorithim("Merge", "Rev Sort", mergeRevSort1k, sorter, &Algorithims::mergeSort, revSort_1K, RevSort1K);
+    cout << endl;
+
+    vector<vector<int>> mergeRand10k = rand10KVec;
+    vector<vector<int>> mergeSort10k = sort10kVec;
+    vector<vector<int>> mergeRevSort10k = revSort10kVec;
+    cout << "The size is n = 10,000 \n";
+    timeAlgorithim("Merge", "Random  ", mergeRand10k, sorter, &Algorithims::mergeSort, random_10K, Rand10K);
+    timeAlgorithim("Merge", "Sort    ", mergeSort10k, sorter, &Algorithims::mergeSort, sort_10K, Sort10K);
+    timeAlgorithim("Merge", "Rev Sort", mergeRevSort10k, sorter, &Algorithims::mergeSort, revSort_10K, RevSort10K);
+    cout << endl;
+
+    vector<vector<int>> mergeRand100k = rand100KVec;
+    vector<vector<int>> mergeSort100k = sort100kVec;
+    vector<vector<int>> mergeRevSort100k = revSort100kVec;
+    cout << "The size is n = 100,000 \n";
+    timeAlgorithim("Merge", "Random  ", mergeRand100k, sorter, &Algorithims::mergeSort, random_100K, Rand100K);
+    timeAlgorithim("Merge", "Sort    ", mergeSort100k, sorter, &Algorithims::mergeSort, sort_100K, Sort100K);
+    timeAlgorithim("Merge", "Rev Sort", mergeRevSort100k, sorter, &Algorithims::mergeSort, revSort_100K, RevSort100K);
+    cout << endl;
+
+    vector<vector<int>> mergeRand1M = rand1MVec;
+    vector<vector<int>> mergeSort1M = sort1MVec;
+    vector<vector<int>> mergeRevSort1M = revSort1MVec;
+    cout << "The size is n = 1,000,000 \n";
+    timeAlgorithim("Merge", "Random  ", mergeRand1M, sorter, &Algorithims::mergeSort, random_1M, Rand1M);
+    timeAlgorithim("Merge", "Sort    ", mergeSort1M, sorter, &Algorithims::mergeSort, sort_1M, Sort1M);
+    timeAlgorithim("Merge", "Rev Sort", mergeRevSort1M, sorter, &Algorithims::mergeSort, revSort_1M, RevSort1M);
+    cout << endl;
+
+    vector<vector<int>> mergeRand10M = rand10MVec;
+    vector<vector<int>> mergeSort10M = sort10MVec;
+    vector<vector<int>> mergeRevSort10M = revSort10MVec;
+    cout << "The size is n = 10,000,000 \n";
+    timeAlgorithim("Merge", "Random  ", mergeRand10M, sorter, &Algorithims::mergeSort, random_10M, Rand10M);
+    timeAlgorithim("Merge", "Sort    ", mergeSort10M, sorter, &Algorithims::mergeSort, sort_10M, Sort10M);
+    timeAlgorithim("Merge", "Rev Sort", mergeRevSort10M, sorter, &Algorithims::mergeSort, revSort_10M, RevSort10M);
+    cout << endl;
+
     cout << "\n\n";
 
     cout << "                 N = 10    \n";
@@ -246,20 +312,34 @@ int main()
     cout << "Rev Sort  :  " << RevSort100 << " The Average time was " << revSort_100 << "\n";
     cout << endl;
 
-    cout << "                 N = 1000    \n";
+    cout << "                 N = 1,000    \n";
     cout << "Random    :  " << Rand1K << " The Average time was " << random_1K << "\n";
     cout << "Sort      :  " << Sort1K << " The Average time was " << sort_1K << "\n";
     cout << "Rev Sort  :  " << RevSort1K << " The Average time was " << revSort_1K << "\n";
     cout << endl;
 
-    cout << "                 N = 10000    \n";
+    cout << "                 N = 10,000    \n";
     cout << "Random    :  " << Rand10K << " The Average time was " << random_10K << "\n";
     cout << "Sort      :  " << Sort10K << " The Average time was " << sort_10K << "\n";
     cout << "Rev Sort  :  " << RevSort10K << " The Average time was " << revSort_10K << "\n";
     cout << endl;
 
-    cout << "                 N = 100000   \n";
+    cout << "                 N = 100,000   \n";
     cout << "Random    :  " << Rand100K << " The Average time was " << random_100K << "\n";
     cout << "Sort      :  " << Sort100K << " The Average time was " << sort_100K << "\n";
     cout << "Rev Sort  :  " << RevSort100K << " The Average time was " << revSort_100K << "\n";
+    cout << endl;
+
+    cout << "                 N = 1,000,000   \n";
+    cout << "Random    :  " << Rand1M << " The Average time was " << random_1M << "\n";
+    cout << "Sort      :  " << Sort1M << " The Average time was " << sort_1M << "\n";
+    cout << "Rev Sort  :  " << RevSort1M << " The Average time was " << revSort_1M << "\n";
+    cout << endl;
+
+    cout << "                 N = 10,000,000   \n";
+    cout << "Random    :  " << Rand10M << " The Average time was " << random_10M << "\n";
+    cout << "Sort      :  " << Sort10M << " The Average time was " << sort_10M << "\n";
+    cout << "Rev Sort  :  " << RevSort10M << " The Average time was " << revSort_10M << "\n";
+    cout << endl;
+
 }
