@@ -135,18 +135,26 @@ int main()
     cout << "The Algorithim is Selection Sort \n\n";
 
 
+    //Making 2D vector for selection sort of size 10 for rand, sorted, and rev sorted
+    //then makes copies of the three vectors that match
     vector<vector<int>> selectRand10 = rand10Vec;
     vector<vector<int>> selectSort10 = sort10Vec;
     vector<vector<int>> selectRevSort10 = revSort10Vec;
+    //Calles the time Algorithim for selction sort for size 10 for the three different types
     cout << "The size is n = 10 \n";
     timeAlgorithim("Selection", "Random  ", selectRand10, sorter, &Algorithims::selectionSort, random_10, Rand10);
     timeAlgorithim("Selection", "Sort    ", selectSort10, sorter, &Algorithims::selectionSort, sort_10, Sort10);
     timeAlgorithim("Selection", "Rev Sort", selectRevSort10, sorter, &Algorithims::selectionSort, revSort_10, RevSort10);
     cout << endl;
 
+    //Making 2D vector for selection sort of size 100 for rand, sorted, and rev sorted
+    //then makes copies of the three vectors that match
+    //And so on, for the rest of the different sizes and different algorithims 
     vector<vector<int>> selectRand100 = rand100Vec;
     vector<vector<int>> selectSort100 = sort100Vec;
     vector<vector<int>> selectRevSort100 = revSort100Vec;
+    //Calles the time Algorithim for selction sort for size 100 for the three different type
+    //And so on, for the rest of the different sizes and different algorithims 
     cout << "The size is n = 100 \n";
     timeAlgorithim("Selection", "Random  ", selectRand100, sorter, &Algorithims::selectionSort, random_100, Rand100);
     timeAlgorithim("Selection", "Sort    ", selectSort100, sorter, &Algorithims::selectionSort, sort_100, Sort100);
@@ -413,6 +421,8 @@ int main()
 
     cout << "\n\n";
 
+    //prints the best times and algorithims for the different types(rand, sorted, rev sorted), and sizes.
+    //will happen for size 100, 1000, 1k and so on.
     cout << "                 N = 10    \n";
     cout << "Random    :  " << Rand10 << " The Average time was " << random_10 << "\n";
     cout << "Sort      :  " << Sort10 << " The Average time was " << sort_10 << "\n";
