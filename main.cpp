@@ -25,7 +25,7 @@ void timeAlgorithim(const string &algoName, const string &type, vector<vector<in
         cout << "| " << setw(6) << fixed << setprecision(5) << time_taken << " |";
     }
     avetime = avetime / count;
-    cout << "Ave time " << setw(6) << fixed << avetime;
+    cout << " Ave time " << setw(6) << fixed << avetime;
     if (avetime < time)
     {
         time = avetime;
@@ -136,7 +136,7 @@ int main()
 
     cout << "\n\n";
 
-    // selection Sort
+    // Bubble Sort
     cout << "The Algorithim is Bubble Sort \n\n";
 
     vector<vector<int>> bubbleRand10 = rand10Vec;
@@ -182,6 +182,55 @@ int main()
     // timeAlgorithim("Bubble", "Random  ", bubbleRand100k, sorter, &Algorithims::bubbleSort, random_100K, Rand100K);
     // timeAlgorithim("Bubble", "Sort    ", bubbleSort100k, sorter, &Algorithims::bubbleSort, sort_100K, Sort100K);
     // timeAlgorithim("Bubble", "Rev Sort", bubbleRevSort100k, sorter, &Algorithims::bubbleSort, revSort_100K, RevSort100K);
+
+    cout << "\n\n";
+
+    // Bubble Sort
+    cout << "The Algorithim is Insertion Sort \n\n";
+
+    vector<vector<int>> insertionRand10 = rand10Vec;
+    vector<vector<int>> insertionSort10 = sort10Vec;
+    vector<vector<int>> insertionRevSort10 = revSort10Vec;
+    cout << "The size is n = 10 \n";
+    timeAlgorithim("Insertion", "Random  ", insertionRand10, sorter, &Algorithims::insertionSort, random_10, Rand10);
+    timeAlgorithim("Insertion", "Sort    ", insertionSort10, sorter, &Algorithims::insertionSort, sort_10, Sort10);
+    timeAlgorithim("Insertion", "Rev Sort", insertionRevSort10, sorter, &Algorithims::insertionSort, revSort_10, RevSort10);
+    cout << endl;
+
+    vector<vector<int>> insertionRand100 = rand100Vec;
+    vector<vector<int>> insertionSort100 = sort100Vec;
+    vector<vector<int>> insertionRevSort100 = revSort100Vec;
+    cout << "The size is n = 100 \n";
+    timeAlgorithim("Insertion", "Random  ", insertionRand100, sorter, &Algorithims::insertionSort, random_100, Rand100);
+    timeAlgorithim("Insertion", "Sort    ", insertionSort100, sorter, &Algorithims::insertionSort, sort_100, Sort100);
+    timeAlgorithim("Insertion", "Rev Sort", insertionRevSort100, sorter, &Algorithims::insertionSort, revSort_100, RevSort100);
+    cout << endl;
+
+    vector<vector<int>> insertionRand1k = rand1KVec;
+    vector<vector<int>> insertionort1k = sort1kVec;
+    vector<vector<int>> insertionRevSort1k = revSort1kVec;
+    cout << "The size is n = 1000 \n";
+    timeAlgorithim("Insertion", "Random  ", insertionRand1k, sorter, &Algorithims::insertionSort, random_1K, Rand1K);
+    timeAlgorithim("Insertion", "Sort    ", insertionort1k, sorter, &Algorithims::insertionSort, sort_1K, Sort1K);
+    timeAlgorithim("Insertion", "Rev Sort", insertionRevSort1k, sorter, &Algorithims::insertionSort, revSort_1K, RevSort1K);
+    cout << endl;
+
+    vector<vector<int>> insertionRand10k = rand10KVec;
+    vector<vector<int>> insertionSort10k = sort10kVec;
+    vector<vector<int>> insertionRevSort10k = revSort10kVec;
+    cout << "The size is n = 10000 \n";
+    timeAlgorithim("Insertion", "Random  ", insertionRand10k, sorter, &Algorithims::insertionSort, random_10K, Rand10K);
+    timeAlgorithim("Insertion", "Sort    ", insertionSort10k, sorter, &Algorithims::insertionSort, sort_10K, Sort10K);
+    timeAlgorithim("Insertion", "Rev Sort", insertionRevSort10k, sorter, &Algorithims::insertionSort, revSort_10K, RevSort10K);
+    cout << endl;
+
+    // vector<vector<int>> insertionRand100k = rand100KVec;
+    // vector<vector<int>> insertionSort100k = sort100kVec;
+    // vector<vector<int>> insertionRevSort100k = revSort100kVec;
+    // cout << "The size is n = 100000 \n";
+    // timeAlgorithim("Insertion", "Random  ", insertionRand100k, sorter, &Algorithims::insertionSort, random_100K, Rand100K);
+    // timeAlgorithim("Insertion", "Sort    ", insertionSort100k, sorter, &Algorithims::insertionSort, sort_100K, Sort100K);
+    // timeAlgorithim("Insertion", "Rev Sort", insertionRevSort100k, sorter, &Algorithims::insertionSort, revSort_100K, RevSort100K);
 
     cout << "\n\n";
 
