@@ -41,8 +41,8 @@ int main()
     srand(10);
 
     // Initialize double variables for random, sorted, and reversed sorted values
-    double random_10 = 1000000, random_100 = 1000000, random_1K = 1000000, random_10K = 1000000, random_100K = 1000000, random_1M = 1000000, random_10M = 1000000;
-    double sort_10 = 1000000, sort_100 = 1000000, sort_1K = 1000000, sort_10K = 1000000, sort_100K = 1000000, sort_1M = 1000000, sort_10M = 1000000;
+    double random_10  = 1000000, random_100 = 1000000, random_1K = 1000000, random_10K = 1000000, random_100K = 1000000, random_1M = 1000000, random_10M = 1000000;
+    double sort_10    = 1000000, sort_100 = 1000000, sort_1K = 1000000, sort_10K = 1000000, sort_100K = 1000000, sort_1M = 1000000, sort_10M = 1000000;
     double revSort_10 = 1000000, revSort_100 = 1000000, revSort_1K = 1000000, revSort_10K = 1000000, revSort_100K = 1000000, revSort_1M = 1000000, revSort_10M = 1000000;
 
     // String variables for describing size categories
@@ -126,13 +126,13 @@ int main()
     timeAlgorithim("Selection", "Rev Sort", selectRevSort10k, sorter, &Algorithims::selectionSort, revSort_10K, RevSort10K);
     cout << endl;
 
-    // vector<vector<int>> selectRand100k = rand100KVec;
-    // vector<vector<int>> selectSort100k = sort100kVec;
-    // vector<vector<int>> selectRevSort100k = revSort100kVec;
-    // cout << "The size is n = 100000 \n";
-    // timeAlgorithim("Selection", "Random  ", selectRand100k, sorter, &Algorithims::selectionSort, random_100K, Rand100K);
-    // timeAlgorithim("Selection", "Sort    ", selectSort100k, sorter, &Algorithims::selectionSort, sort_100K, Sort100K);
-    // timeAlgorithim("Selection", "Rev Sort", selectRevSort100k, sorter, &Algorithims::selectionSort, revSort_100K, RevSort100K);
+    vector<vector<int>> selectRand100k = rand100KVec;
+    vector<vector<int>> selectSort100k = sort100kVec;
+    vector<vector<int>> selectRevSort100k = revSort100kVec;
+    cout << "The size is n = 100000 \n";
+    timeAlgorithim("Selection", "Random  ", selectRand100k, sorter, &Algorithims::selectionSort, random_100K, Rand100K);
+    timeAlgorithim("Selection", "Sort    ", selectSort100k, sorter, &Algorithims::selectionSort, sort_100K, Sort100K);
+    timeAlgorithim("Selection", "Rev Sort", selectRevSort100k, sorter, &Algorithims::selectionSort, revSort_100K, RevSort100K);
 
     cout << "\n\n";
 
@@ -175,13 +175,13 @@ int main()
     timeAlgorithim("Bubble", "Rev Sort", bubbleRevSort10k, sorter, &Algorithims::bubbleSort, revSort_10K, RevSort10K);
     cout << endl;
 
-    // vector<vector<int>> bubbleRand100k = rand100KVec;
-    // vector<vector<int>> bubbleSort100k = sort100kVec;
-    // vector<vector<int>> bubbleRevSort100k = revSort100kVec;
-    // cout << "The size is n = 100000 \n";
-    // timeAlgorithim("Bubble", "Random  ", bubbleRand100k, sorter, &Algorithims::bubbleSort, random_100K, Rand100K);
-    // timeAlgorithim("Bubble", "Sort    ", bubbleSort100k, sorter, &Algorithims::bubbleSort, sort_100K, Sort100K);
-    // timeAlgorithim("Bubble", "Rev Sort", bubbleRevSort100k, sorter, &Algorithims::bubbleSort, revSort_100K, RevSort100K);
+    vector<vector<int>> bubbleRand100k = rand100KVec;
+    vector<vector<int>> bubbleSort100k = sort100kVec;
+    vector<vector<int>> bubbleRevSort100k = revSort100kVec;
+    cout << "The size is n = 100000 \n";
+    timeAlgorithim("Bubble", "Random  ", bubbleRand100k, sorter, &Algorithims::bubbleSort, random_100K, Rand100K);
+    timeAlgorithim("Bubble", "Sort    ", bubbleSort100k, sorter, &Algorithims::bubbleSort, sort_100K, Sort100K);
+    timeAlgorithim("Bubble", "Rev Sort", bubbleRevSort100k, sorter, &Algorithims::bubbleSort, revSort_100K, RevSort100K);
 
     cout << "\n\n";
 
@@ -224,13 +224,13 @@ int main()
     timeAlgorithim("Insertion", "Rev Sort", insertionRevSort10k, sorter, &Algorithims::insertionSort, revSort_10K, RevSort10K);
     cout << endl;
 
-    // vector<vector<int>> insertionRand100k = rand100KVec;
-    // vector<vector<int>> insertionSort100k = sort100kVec;
-    // vector<vector<int>> insertionRevSort100k = revSort100kVec;
-    // cout << "The size is n = 100000 \n";
-    // timeAlgorithim("Insertion", "Random  ", insertionRand100k, sorter, &Algorithims::insertionSort, random_100K, Rand100K);
-    // timeAlgorithim("Insertion", "Sort    ", insertionSort100k, sorter, &Algorithims::insertionSort, sort_100K, Sort100K);
-    // timeAlgorithim("Insertion", "Rev Sort", insertionRevSort100k, sorter, &Algorithims::insertionSort, revSort_100K, RevSort100K);
+    vector<vector<int>> insertionRand100k = rand100KVec;
+    vector<vector<int>> insertionSort100k = sort100kVec;
+    vector<vector<int>> insertionRevSort100k = revSort100kVec;
+    cout << "The size is n = 100000 \n";
+    timeAlgorithim("Insertion", "Random  ", insertionRand100k, sorter, &Algorithims::insertionSort, random_100K, Rand100K);
+    timeAlgorithim("Insertion", "Sort    ", insertionSort100k, sorter, &Algorithims::insertionSort, sort_100K, Sort100K);
+    timeAlgorithim("Insertion", "Rev Sort", insertionRevSort100k, sorter, &Algorithims::insertionSort, revSort_100K, RevSort100K);
 
     // merge Sort
     cout << "The Algorithim is Merge Sort \n\n";
