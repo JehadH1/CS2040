@@ -23,8 +23,10 @@ public:
     void merge(vector<int> &left, vector<int> &right, vector<int> &vec);
 
     // quick sort
-    void quickSort(vector<int> &vec, int left, int right);
+    void quickSortReal(vector<int> &vec, int left, int right);
+    void quickSort(vector<int> &vec);
     int partition(vector<int>& vec, int left, int right);
+
 };
 
 #endif
