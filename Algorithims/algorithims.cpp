@@ -68,6 +68,7 @@ void Algorithims::insertionSort(vector<int> &vec)
         int j = i - 1;
 
         while ((j >= 0) && (vec[j] > v)){
+            //swap
             vec[j + 1] = vec[j];
             j = j - 1;
         }
@@ -100,8 +101,10 @@ void Algorithims::mergeSort(vector<int> &vec){
         else
             right.push_back(vec[i]);
     }
+    //call merge sort on left and right part of array
     mergeSort(left);
     mergeSort(right);
+    //merge them
     merge(left, right, vec);
 }
 
@@ -157,8 +160,11 @@ void Algorithims::merge(vector<int> &left, vector<int> &right, vector<int> &vec)
 
 void Algorithims::quickSort(vector<int> &vec, int left, int right){
     if (left < right){
+        //find the partition
         int s = partition(vec, left, right);
+        //call quicksort on index 0 to partition
         quickSort(vec, left, s - 1);
+        //call quicksort on partition to last index
         quickSort(vec, s + 1, right);
     }
 }
@@ -186,12 +192,13 @@ int Algorithims::partition(vector<int> &vec, int left, int right){
         if (i >= j)
             break; // breaking out early prevents undoing last swap
 
-        int tmp = vec[i]; // swap vec[i] and vec[j]
+        // swap
+        int tmp = vec[i]; 
         vec[i] = vec[j];
         vec[j] = tmp;
     }
-
-    int tmp = vec[left]; // swap vec[left] and vec[j]
+    // swap
+    int tmp = vec[left]; 
     vec[left] = vec[j];
     vec[j] = tmp;
 
