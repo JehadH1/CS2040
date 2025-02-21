@@ -379,9 +379,9 @@ int main()
     vector<vector<int>> quickSort100 = sort100Vec;
     vector<vector<int>> quickRevSort100 = revSort100Vec;
     cout << "The size is n = 100 \n";
-    timeAlgorithim("Qucik", "Random  ", quickRand100, sorter, &Algorithims::quickSort, random_100, Rand100);
-    timeAlgorithim("Qucik", "Sort    ", quickSort100, sorter, &Algorithims::quickSort, sort_100, Sort100);
-    timeAlgorithim("Qucik", "Rev Sort", quickRevSort100, sorter, &Algorithims::quickSort, revSort_100, RevSort100);
+    timeAlgorithim("Quick", "Random  ", quickRand100, sorter, &Algorithims::quickSort, random_100, Rand100);
+    timeAlgorithim("Quick", "Sort    ", quickSort100, sorter, &Algorithims::quickSort, sort_100, Sort100);
+    timeAlgorithim("Quick", "Rev Sort", quickRevSort100, sorter, &Algorithims::quickSort, revSort_100, RevSort100);
     cout << endl;
 
     vector<vector<int>> quickRand1k = rand1KVec;
